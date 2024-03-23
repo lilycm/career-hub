@@ -14,8 +14,8 @@ const Header = () => {
 {/* <li><a className="font-semibold text-[#757575] text-base"></a></li> */}
 
     return (
-        <div className="lg:px-14">
-            <div className="navbar bg-base-100">
+        <div className="">
+            <div className="navbar bg-[#f3f0fc] lg:px-14 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
