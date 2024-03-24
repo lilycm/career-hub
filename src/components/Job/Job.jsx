@@ -1,10 +1,11 @@
 import './Job.css'
 import { SlLocationPin } from "react-icons/sl";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { Link } from 'react-router-dom';
 
 
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
+    const {id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
     return (
         <div>
             <div className='rounded-2xl py-7 px-6 border job'>
@@ -27,7 +28,7 @@ const Job = ({ job }) => {
                         </div>
                     </div>
                     <div>
-                        <button className='font-man font-extrabold text-xl bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white px-3 py-4 rounded-lg'>View Details</button>
+                        <Link to={`/job/${id}`}><button className='font-man font-extrabold text-xl bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white px-3 py-4 rounded-lg'>View Details</button></Link>
                     </div>
                 </div>
             </div>
