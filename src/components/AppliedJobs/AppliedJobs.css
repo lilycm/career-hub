@@ -1,0 +1,11 @@
+.font-man{
+    font-family: "Manrope", sans-serif;
+}
+.job-details{
+    background: url(/src/assets/images/bg1.png) left bottom no-repeat, url(/src/assets/images/bg2.png) top right no-repeat, linear-gradient(#7e8ffe3b, #9873ff25);
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

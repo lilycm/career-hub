@@ -1,21 +1,18 @@
 const getStoredJobApplication = () => {
-    const storeJobApplication = localStorage.getItem('job Applications');
-    if (storeJobApplication) {
-        return JSON.parse(storeJobApplication);
+    const storedJobApplication = localStorage.getItem('job Applications');
+    if (storedJobApplication) {
+        return JSON.parse(storedJobApplication);
     }
-    else{
-        return [];
-    }
+    return [];
 }
 
 
-
 const saveJobApplication = id => {
-    const storeJobApplications = getStoredJobApplication();
-    const exits = storeJobApplications.find(jodId => jodId === id);
+    const storedJobApplications = getStoredJobApplication();
+    const exits = storedJobApplications.find(jobId => jobId === id);
     if(!exits){
-        storeJobApplications.push(id);
-        localStorage.getItem('job Applications', JSON.stringify(storeJobApplications));
+        storedJobApplications.push(id);
+        localStorage.setItem('job Applications', JSON.stringify(storedJobApplications));
     }
 }
 export {getStoredJobApplication, saveJobApplication }
