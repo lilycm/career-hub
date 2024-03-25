@@ -9,7 +9,7 @@ const Banner = () => {
                 <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white font-man">Get Started</button>
             </div>
             <div>
-                <img src='./src/assets/images/user.png' alt="" />
+                <img src='/src/assets/images/user.png' alt="" />
             </div>
         </div>
     );

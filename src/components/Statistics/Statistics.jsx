@@ -2,7 +2,7 @@
 
 const Statistics = () => {
     return (
-        <div>
+        <div className="lg:px-14">
             <h2>Statistics</h2>
         </div>
     );
