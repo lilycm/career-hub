@@ -11,8 +11,22 @@ import { FaChevronDown } from "react-icons/fa";
 const AppliedJobs = () => {
     const jobs = useLoaderData();
 
-    const [appliedjob, setAppliedJob] = useState([]);
+    const [appliedjobs, setAppliedJobs] = useState([]);
     const [displayJobs, setDisplayJobs] = useState([]);
+
+    const handleJobsFilter= filter=>{
+        if(filter === "All"){
+            setDisplayJobs(appliedjobs)
+        }
+        else if(filter === "Remote"){
+            const remoteJobs = appliedjobs.filter(job=> job.remote_or_onsite=== "Remote");
+            setDisplayJobs(remoteJobs);
+        }
+        else if(filter === "Onsite"){
+            const onsiteJobs = appliedjobs.filter(job=> job.remote_or_onsite === "Onsite");
+            setDisplayJobs(onsiteJobs);
+        }
+    }
 
 
     useEffect(() => {
@@ -28,20 +42,20 @@ const AppliedJobs = () => {
                     jobsApplied.push(job);
                 }
             }
-            setAppliedJob(jobsApplied);
+            setAppliedJobs(jobsApplied);
             setDisplayJobs(jobsApplied)
             // console.log(jobs, storedJobIds, jobsApplied);
         }
     }, [])
 
-    console.log(appliedjob);
+    console.log(appliedjobs);
 
 
     return (
         <div>
             <div className="">
                 <div className="job-details">
-                    <h2 className="font-man text-2xl font-extrabold">Applied jobs: {appliedjob.length}</h2>
+                    <h2 className="font-man text-2xl font-extrabold">Applied jobs: {appliedjobs.length}</h2>
                 </div>
                 <div className="lg:my-20 lg:px-20">
                     <div className="flex justify-end mb-7">
@@ -49,9 +63,9 @@ const AppliedJobs = () => {
                             <summary className="m-1 btn">Filter By <FaChevronDown />
                             </summary>
                             <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                                <li><a>All</a></li>
-                                <li><a>Remote</a></li>
-                                <li><a>Onsite</a></li>
+                                <li onClick={()=>handleJobsFilter("All")}><a>All</a></li>
+                                <li onClick={()=>handleJobsFilter("Remote")}><a>Remote</a></li>
+                                <li onClick={()=>handleJobsFilter("Onsite")}><a>Onsite</a></li>
                             </ul>
                         </details>
                     </div>
