@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
-
+import './Header.css'
 
 const Header = () => {
 
     const links = <>
-        <li className="mx-2"><NavLink to='/'>Home</NavLink></li>
-        <li className="mx-2"><NavLink to='/statistics'>Statistics</NavLink></li>
-        <li className="mx-2"><NavLink to='/applied'>Applied Jobs</NavLink></li>
-        <li className="mx-2"><NavLink to='/blog'>Blog</NavLink></li>
+        <li className="mx-2 font-man font-bold text-lg"><NavLink to='/'>Home</NavLink></li>
+        <li className="mx-2 font-man font-bold text-lg"><NavLink to='/statistics'>Statistics</NavLink></li>
+        <li className="mx-2 font-man font-bold text-lg"><NavLink to='/applied'>Applied Jobs</NavLink></li>
+        <li className="mx-2 font-man font-bold text-lg"><NavLink to='/blog'>Blog</NavLink></li>
     </>
 
 // <li><a className="font-semibold text-[#757575] text-base"></a></li>

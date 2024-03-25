@@ -1,0 +1,8 @@
+.navbar a.active{
+    background: linear-gradient(to right, #7E90FE, #9873FF);
+    color: white;
+
+}
+.font-man{
+    font-family: "Manrope", sans-serif;
+}
